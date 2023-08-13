@@ -4,10 +4,11 @@ services:
     image: plexinc/pms-docker
     container_name: plex
     network_mode: host
+    restart: unless-stopped
     volumes:
-      - /plex/config:/config
-      - /plex/transcode:/transcode
-      - /mnt/media:/data
+      - /home/styrn/plex/config:/config
+      - /home/styrn/plex/transcode:/transcode
+      - /home/styrn/mnt/media:/data
     environment:
       - TZ="America/Chicago"
       - PLEX_CLAIM=${PLEX_CLAIM}
