@@ -6,6 +6,7 @@ services:
     volumes:
       - /home/styrn/sh/has/config:/config
       - /etc/localtime:/etc/localtime:ro
+      - /dev/serial/by-id:/dev/serial/by-id
     restart: unless-stopped
     privileged: true
     network_mode: host
