@@ -12,3 +12,13 @@ services:
     environment:
       - TZ="America/Chicago"
       - PLEX_CLAIM=${PLEX_CLAIM}
+  mosquitto:
+    image: eclipse-mosquitto
+    container_name: mosquitto
+    volumes:
+      - /home/styrn/sh/mosquitto:/mosquitto
+      - /home/styrn/sh/mosquitto/data:/mosquitto/data
+      - /home/styrn/sh/mosquitto/log:/mosquitto/log
+    ports:
+      - 1883:1883
+      - 9001:9001
