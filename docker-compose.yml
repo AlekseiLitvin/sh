@@ -6,9 +6,9 @@ services:
     network_mode: host
     restart: unless-stopped
     volumes:
-      - /home/styrn/plex/config:/config
-      - /home/styrn/plex/transcode:/transcode
-      - /home/styrn/mnt/media:/data
+      - /home/styrn/sh/plex/config:/config
+      - /home/styrn/sh/plex/transcode:/transcode
+      - /home/styrn/media:/data
     environment:
       - TZ="America/Chicago"
       - PLEX_CLAIM=${PLEX_CLAIM}
