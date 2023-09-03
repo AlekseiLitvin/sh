@@ -9,7 +9,8 @@ services:
       - /dev/serial/by-id:/dev/serial/by-id
     restart: unless-stopped
     privileged: true
-    network_mode: host
+    ports:
+      - "8123:8123"
   plex:
     image: plexinc/pms-docker
     container_name: plex
@@ -62,7 +63,9 @@ services:
       FRIGATE_RTSP_PASSWORD: ${FRIGATE_PASSWORD}
   ngrok:
     image: ngrok/ngrok:latest
+    container_name: ngrok
     restart: unless-stopped
+    network_mode: host
     command:
       - "start"
       - "--all"
@@ -72,5 +75,3 @@ services:
       - /home/styrn/sh/ngrok/ngrok.yml:/etc/ngrok.yml
     environment:
       NGROK_AUTHTOKEN: ${NGROK_AUTHTOKEN}
-    ports:
-      - "4040:4040"
