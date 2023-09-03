@@ -75,16 +75,3 @@ services:
       - /home/styrn/sh/ngrok/ngrok.yml:/etc/ngrok.yml
     environment:
       NGROK_AUTHTOKEN: ${NGROK_AUTHTOKEN}
-  kuma:
-    image: louislam/uptime-kuma:1
-    container_name: kuma
-    restart: unless-stopped
-    ports:
-      - "3001:3001"
-    volumes:
-      - uptime-kuma:/app/data
-
-volumes:
-  uptime-kuma:
-    driver: local
-
