@@ -84,3 +84,7 @@ services:
     volumes:
       - uptime-kuma:/app/data
 
+volumes:
+  uptime-kuma:
+    driver: local
+
