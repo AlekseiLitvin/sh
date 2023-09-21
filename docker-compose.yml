@@ -1,6 +1,8 @@
 version: "3.9"
 services:
   home_assistant:
+    depends_on:
+      - frigate
     container_name: homeassistant
     image: "ghcr.io/home-assistant/home-assistant:stable"
     volumes:
