@@ -4,7 +4,7 @@ services:
     depends_on:
       - frigate
     container_name: homeassistant
-    image: "ghcr.io/home-assistant/home-assistant:stable"
+    image: "ghcr.io/home-assistant/home-assistant:3.18"
     volumes:
       - /home/styrn/sh/has/config:/config
       - /etc/localtime:/etc/localtime:ro
